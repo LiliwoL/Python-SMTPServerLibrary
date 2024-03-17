@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "49daa47b-3d70-4a4e-b0da-8a53d005e3e4",
+		"name": "SMTP Server Library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2209621",
+		"_collection_link": "https://orange-astronaut-204458.postman.co/workspace/My-Workspace~8319e3bc-2ba7-4bd8-8f46-571e7523c6f5/collection/2209621-49daa47b-3d70-4a4e-b0da-8a53d005e3e4?action=share&source=collection_link&creator=2209621"
+	},
+	"item": [
+		{
+			"name": "SendMail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"api_key\": \"{{API_KEY}}\",\r\n    \"to\": \"nicolas.cosneau@ac-poitiers.fr\",\r\n    \"reply-to\": \"nicolas.cosneau@ac-poitiers.fr\",\r\n    \"subject\": \"Test d'un envoi de mail\",\r\n    \"body\":  \"On essaie?\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "127.0.0.1",
+			"type": "string"
+		},
+		{
+			"key": "PORT",
+			"value": "666",
+			"type": "string"
+		},
+		{
+			"key": "API_KEY",
+			"value": "BTS-SIO",
+			"type": "string"
+		}
+	]
+}
