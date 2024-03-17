@@ -67,7 +67,7 @@
 	"variable": [
 		{
 			"key": "HOST",
-			"value": "127.0.0.1",
+			"value": "127.0.0.1/V1/",
 			"type": "string"
 		},
 		{
