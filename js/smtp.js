@@ -3,8 +3,12 @@ var Email = {
     send: function (a) {
         return new Promise(function (n, e) {
             a.nocache = Math.floor(1e6 * Math.random() + 1), a.Action = "Send";
+
+            // Ajout de la clé API
+            a.api_key = "TestBTSSIO";
+
             var t = JSON.stringify(a);
-            Email.ajaxPost("http://172.16.3.253:666/SMTPServerLibrary?", t, function (e) {
+            Email.ajaxPost("http://172.16.3.253:666/  ?", t, function (e) {
                 n(e)
             })
         })
