@@ -36,7 +36,7 @@ app.logger.info('Flask app started')
 
 # ############################################
 # Définition des routes
-@app.route('/', methods=['POST'])
+@app.route('/v1/', methods=['POST'])
 def send_email():
     # Lecture du JSON envoyé
     data = request.get_json()
@@ -67,7 +67,7 @@ def send_email():
 
     return output
 
-@app.route('/', methods=['GET'])
+@app.route('/v1/', methods=['GET'])
 def script():
     # Lecture du fichier SMTP.js
     file = open("js/smtp.min.js", "r")

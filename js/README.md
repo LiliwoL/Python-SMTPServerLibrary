@@ -7,7 +7,7 @@
 > Pensez à adapter avec votre arborescence!
 
 ```html
-<script src="http:://172.16.3.253:666"></script>
+<script src="http:://172.16.3.253:666/v1/"></script>
 ```
 
 > Ce script est hébergé sur un serveur local. Pensez à adapter l'URL avec votre propre serveur.
