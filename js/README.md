@@ -2,7 +2,7 @@
 
 ## Inclusion du script dans votre page HTML
 
-À insérer juste avant la balise `</body>`.
+À insérer juste avant la balise `</head>`.
 
 > Pensez à adapter avec votre arborescence!
 
@@ -31,7 +31,7 @@ Email.send(
         "body" : ""
     }
 ).then(
-    message => alert(message)
+    message => console.log(message)
 );
 ```
 
@@ -54,20 +54,24 @@ Le HTML pourrait ressembler à ceci:
 Le javascript pourrait ressembler à ceci:
 
 ```javascript
-// Ajout d'un écouteur d'événement
 document.getElementById('formulaireEnvoiMail').addEventListener('submit', function(e) {
-    // On évite le comportment par défaut d'un formulaire
     e.preventDefault();
-    Email.send(
-        {    
-            "to" : document.getElementById('to').value,        
-            "reply-to" : document.getElementById('reply-to').value,
-            "subject" : document.getElementById('subject').value,
-            "body" : document.getElementById('body').value
-        }
-    ).then(
-        message => alert(message)
-    );
+
+    // Ajout d'un écouteur d'événement
+    document.getElementById('formulaireEnvoiMail').addEventListener('submit', function(e) {
+        // On évite le comportment par défaut d'un formulaire
+        e.preventDefault();
+        Email.send(
+            {
+                "to" : document.getElementById('to').value,
+                "reply-to" : document.getElementById('reply-to').value,
+                "subject" : document.getElementById('subject').value,
+                "body" : document.getElementById('body').value
+            }
+        ).then(
+            message => console.log(message)
+        );
+    });
 });
 ```
 

@@ -14,7 +14,7 @@ var Email = {
         })
     }, ajaxPost: function (e, n, t) {
         var a = Email.createCORSRequest("POST", e);
-        a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), a.onload = function () {
+        a.setRequestHeader("Content-type", "application/json"), a.onload = function () {
             var e = a.responseText;
             null != t && t(e)
         }, a.send(n)

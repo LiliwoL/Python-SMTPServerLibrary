@@ -27,6 +27,8 @@ https://github.com/mattwalshdev/emailee/tree/main
 
 ## Inclusion du script dans votre page HTML
 
+Incluez le script juste avant la balise `</head>`.
+
 > L'URL est celle du serveur hébergeant le script.
 > Pensez à adapter avec votre propre serveur.
 
@@ -74,7 +76,7 @@ pip install -r requirements.txt
 
 ## Configuration
 
-Créer le fichier **.env** (en vous basant sur le fichier **.env.sample** fournbi) avec vos valeurs.
+Créer le fichier **.env** (en vous basant sur le fichier **.env.sample** fourni) avec vos valeurs.
 
 ---
 
@@ -85,3 +87,9 @@ Créer le fichier **.env** (en vous basant sur le fichier **.env.sample** fournb
 ```bash
 python3 smtp.py
 ```
+
+---
+
+# Exemple
+
+Le dossier **sample** contient une application exemple pour tester la librairie et le serveur.
