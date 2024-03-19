@@ -8,7 +8,7 @@ var Email = {
             a.api_key = "TestBTSSIO";
 
             var t = JSON.stringify(a);
-            Email.ajaxPost("http://172.16.3.253:666/v1/?", t, function (e) {
+            Email.ajaxPost("http://172.16.3.253:6666/v1/?", t, function (e) {
                 n(e)
             })
         })
