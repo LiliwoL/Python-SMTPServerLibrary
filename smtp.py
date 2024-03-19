@@ -51,7 +51,7 @@ def send_email():
                         port=int(envVars['SMTP_PORT']),
                         authUsername=envVars['SMTP_USER'],
                         authPassword=envVars['SMTP_PASSWORD'],
-                        SSLTLS=envVars['SMTP_USE_TLS_OR_TLS']
+                        SSLTLS=envVars['SMTP_USE_SSL_OR_TLS']
                         )
 
         emailee.sender(sender=envVars['SMTP_USER'], replyTo=data['reply-to'])
