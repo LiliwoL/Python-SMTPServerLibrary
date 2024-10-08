@@ -22,13 +22,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{HOST}}:{{PORT}}/",
+					"raw": "http://{{HOST}}:{{PORT}}/v1/",
 					"protocol": "http",
 					"host": [
 						"{{HOST}}"
 					],
 					"port": "{{PORT}}",
 					"path": [
+						"v1",
 						""
 					]
 				}
@@ -36,10 +37,21 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "Get all emails",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:1080/email",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "1080",
+					"path": [
+						"email"
+					]
+				}
 			},
 			"response": []
 		}
@@ -67,7 +79,7 @@
 	"variable": [
 		{
 			"key": "HOST",
-			"value": "127.0.0.1/V1/",
+			"value": "172.16.0.100",
 			"type": "string"
 		},
 		{
