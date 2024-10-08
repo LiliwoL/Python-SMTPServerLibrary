@@ -22,7 +22,7 @@ DEBUG = envVars['DEBUG']
 print("Variables d'environnement:")
 print(envVars)
 
-__version__ = "1.0.0"
+__version__ = "2.0.0"
 
 # ############################################
 # Création de l'application Flask
@@ -47,12 +47,20 @@ def send_email():
     else:
         # Envoi de l'email
         emailee = Emailee()
-        emailee.server( smtpServer=envVars['SMTP_SERVER'],
-                        port=int(envVars['SMTP_PORT']),
-                        authUsername=envVars['SMTP_USER'],
-                        authPassword=envVars['SMTP_PASSWORD'],
-                        SSLTLS=envVars['SMTP_USE_TLS_OR_TLS']
-                        )
+
+        serverOptions = {
+            'smtpServer': envVars['SMTP_SERVER'],
+            'port': int(envVars['SMTP_PORT']),
+            'authUsername': envVars['SMTP_USER'],
+            'authPassword': envVars['SMTP_PASSWORD']
+        }
+
+
+        # Only If SSL/TLS is required
+        if envVars['SMTP_USE_SSL_OR_TLS'] == 'SSL' or envVars['SMTP_USE_SSL_OR_TLS'] == 'TLS':
+            serverOptions['SSLTLS'] = envVars['SMTP_USE_SSL_OR_TLS']
+
+        emailee.server(**serverOptions)
 
         emailee.sender(sender=envVars['SMTP_USER'], replyTo=data['reply-to'])
 

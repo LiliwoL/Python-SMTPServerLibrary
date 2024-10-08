@@ -33,7 +33,7 @@ Incluez le script juste avant la balise `</head>`.
 > Pensez à adapter avec votre propre serveur.
 
 ```html
-<script src="http://172.16.3.253:666"></script>
+<script src="http://172.16.0.100:666"></script>
 ```
 
 ---
