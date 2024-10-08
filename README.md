@@ -1,4 +1,9 @@
-# SMTPServerLibrary
+███████╗███╗   ███╗████████╗██████╗ ███████╗███████╗██████╗ ██╗   ██╗███████╗██████╗ ██╗     ██╗██████╗ ██████╗  █████╗ ██████╗ ██╗   ██╗
+██╔════╝████╗ ████║╚══██╔══╝██╔══██╗██╔════╝██╔════╝██╔══██╗██║   ██║██╔════╝██╔══██╗██║     ██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝
+███████╗██╔████╔██║   ██║   ██████╔╝███████╗█████╗  ██████╔╝██║   ██║█████╗  ██████╔╝██║     ██║██████╔╝██████╔╝███████║██████╔╝ ╚████╔╝ 
+╚════██║██║╚██╔╝██║   ██║   ██╔═══╝ ╚════██║██╔══╝  ██╔══██╗╚██╗ ██╔╝██╔══╝  ██╔══██╗██║     ██║██╔══██╗██╔══██╗██╔══██║██╔══██╗  ╚██╔╝  
+███████║██║ ╚═╝ ██║   ██║   ██║     ███████║███████╗██║  ██║ ╚████╔╝ ███████╗██║  ██║███████╗██║██████╔╝██║  ██║██║  ██║██║  ██║   ██║   
+╚══════╝╚═╝     ╚═╝   ╚═╝   ╚═╝     ╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   
 
 Un projet d'une librairie en JS pour faciliter l'envoi de mail depuis un formulaire HTML.
 
@@ -6,13 +11,13 @@ Il consiste en une librairie Js à insérer dans le code HTML et un script appel
 
 [toc]
 
-v0.1
+v0.2
 
 ---
 
 # Source
 
-https://github.com/mattwalshdev/emailee/tree/main
+- https://github.com/mattwalshdev/emailee/tree/main
 
 ---
 
@@ -41,16 +46,19 @@ Incluez le script juste avant la balise `</head>`.
 ## Utilisation du script
 
 ```javascript
-Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "username",
-    Password : "password",
-    To : 'them@website.com',
-    From : "you@isp.com",
-    Subject : "This is the subject",
-    Body : "And this is the body"
-}).then(
-    message => alert(message)
+Email.send(
+    {
+        "to" : "email@destinataire.fr",
+        "reply-to" : "sender@seder.com",
+        "subject" : "It's awesome!",
+        "body" : "Some long text"
+    }
+).then(
+    message => {
+        alert("Envoyé avec succès");
+
+        console.log(message)
+    }
 );
 ```
 
@@ -60,7 +68,7 @@ Email.send({
 
 Vous trouverez une collection PostMan pour tester le serveur SMTP dans le dossier **PostManCollection**.
 
-Il faut modifier les **variables** de la collection et adater à votre configuration.
+Il faut modifier les **variables** de la collection et adapter à votre configuration.
 
 ---
 
