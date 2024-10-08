@@ -9,9 +9,11 @@ from emailee import Emailee
 import dotenv
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import pyfiglet
 
 # ############################################
 
+print(pyfiglet.figlet_format("SMTP Server") + "Version: 2.0.0")
 
 # Chargement des variables d'environnement
 envVars = dotenv.dotenv_values("./.env")
